@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { CheckCircle, Github, Globe } from 'lucide-react';
-import { PROJECTS } from '../constants';
+import { PROJECTS, PERSONAL_INFO } from '../constants';
+import SEO from '../components/SEO';
 
 const ProjectDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,6 +19,13 @@ const ProjectDetail: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f8f9fa] pt-16 font-sans text-[#202124]">
+      <SEO 
+        title={`${project.title} | ${PERSONAL_INFO.name}`}
+        description={project.shortDescription}
+        image={project.imageUrl}
+        url={window.location.href}
+      />
+      
       <div className="flex flex-1 justify-center px-4 sm:px-8 md:px-20 lg:px-40 py-5">
         <div className="flex flex-col w-full max-w-[960px] flex-1">
           

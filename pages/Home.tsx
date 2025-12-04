@@ -2,10 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code2, ExternalLink, Globe, Download, ChevronRight } from 'lucide-react';
 import { PERSONAL_INFO, SKILLS, PROJECTS, EDUCATION, CERTIFICATIONS } from '../constants';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   return (
     <div className="pt-16">
+      <SEO 
+        title={`${PERSONAL_INFO.name} - Software Developer`}
+        description={PERSONAL_INFO.about}
+        image={PERSONAL_INFO.profileImage}
+        url={window.location.origin}
+      />
+      
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden bg-white">
         {/* Abstract Background Elements */}

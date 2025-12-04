@@ -18,7 +18,7 @@ export const PERSONAL_INFO = {
   location: "Dehradun, Uttarakhand, India",
   linkedin: "https://linkedin.com/in/pourushsiddharth",
   github: "https://github.com/pourushsiddharth",
-  profileImage: "https://github.com/pourushsiddharth/portfolio/blob/main/voter%20id%20(1).jpg?raw=true",
+  profileImage: "https://github.com/pourushsiddharth/portfolio/blob/main/dp.png?raw=true",
   about: "Highly motivated and analytical Computer Science Engineering student with a strong foundation in data structures, algorithms, and full-stack web development. Proven ability to design and implement efficient, robust software solutions. Expertise in Python, Flask, HTML5, CSS, JavaScript, and SQLite.",
   resumeLink: "pourush-siddharth-resume.pdf" 
 };

@@ -18,7 +18,7 @@ export const PERSONAL_INFO = {
   location: "Dehradun, Uttarakhand, India",
   linkedin: "https://linkedin.com/in/pourushsiddharth",
   github: "https://github.com/pourushsiddharth",
-  profileImage: "https://github.com/pourushsiddharth/portfolio/blob/main/smalldp.png?raw=true",
+  profileImage: "https://raw.githubusercontent.com/pourushsiddharth/portfolio/refs/heads/main/smalldp.png",
   about: "Highly motivated and analytical Computer Science Engineering student with a strong foundation in data structures, algorithms, and full-stack web development. Proven ability to design and implement efficient, robust software solutions. Expertise in Python, Flask, HTML5, CSS, JavaScript, and SQLite.",
   resumeLink: "pourush-siddharth-resume.pdf" 
 };
@@ -77,7 +77,7 @@ export const PROJECTS: Project[] = [
     technologies: ["Python", "Flask", "LLM (Gemini API)", "JavaScript", "HTML5", "CSS3"],
     imageUrl: "https://picsum.photos/id/26/800/600",
     liveUrl: "https://ems.pourushsiddharth.in",
-    githubUrl: "https://github.com/pourushsiddharth/emotional-mapping/",
+    githubUrl: "https://github.com/pourushsiddharth/emotional-map-generator",
     role: "AI Developer",
     date: "April 2025 – May 2025",
     features: [

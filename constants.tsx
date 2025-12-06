@@ -20,7 +20,7 @@ export const PERSONAL_INFO = {
   github: "https://github.com/pourushsiddharth",
   profileImage: "https://raw.githubusercontent.com/pourushsiddharth/portfolio/refs/heads/main/smalldp.png",
   about: "Highly motivated and analytical Computer Science Engineering student with a strong foundation in data structures, algorithms, and full-stack web development. Proven ability to design and implement efficient, robust software solutions. Expertise in Python, Flask, HTML5, CSS, JavaScript, and SQLite.",
-  resumeLink: "pourush-siddharth-resume.pdf" 
+  resumeLink: "https://drive.google.com/file/d/1OAKetxMMwTnEgLcG3dPggDMUmhEi6bVT/view?usp=sharing" 
 };
 
 export const SKILLS = [

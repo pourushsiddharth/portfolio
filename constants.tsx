@@ -44,8 +44,8 @@ export const PROJECTS: Project[] = [
     longDescription: "This application reimagines the personal portfolio as a 3D driving experience. Built with React 18, Three.js, and React Three Fiber, it replaces vertical scrolling with a car driving down a highway. As users scroll, they pass procedurally generated environments—billboards representing projects, buildings symbolizing milestones, and a 'Tech Park' for dream companies. The application features a custom physics-based movement system, particle effects for vehicle exhaust, and a hybrid rendering engine that overlays HTML content on a dynamic 3D scene. Optimized for performance, it uses procedural textures and level-of-detail techniques to maintain 60FPS.",
     technologies: ["React 18", "Three.js", "React Three Fiber", "Tailwind CSS", "Vite", "Netlify"],
     imageUrl: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop",
-    liveUrl: "https://3d-portfolio-pourush.netlify.app",
-    githubUrl: "https://github.com/pourushsiddharth/3d-portfolio",
+    liveUrl: "https://model-resume.vercel.app/",
+    githubUrl: "https://github.com/pourushsiddharth/model_resume",
     features: [
       "Scroll Control: Virtual scroll container with physics-based lerping (0 to -380 z-axis).",
       "Procedural Assets: Canvas API generated road textures and dynamic particle smoke system.",

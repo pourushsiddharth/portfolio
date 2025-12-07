@@ -74,7 +74,7 @@ const Header: React.FC = () => {
               ) : (
                 <Link 
                   key={link.name}
-                  to="/" 
+                  to={link.href} 
                   className="text-gray-600 hover:text-[#1a73e8] font-medium transition-colors text-sm"
                 >
                   {link.name}
@@ -127,7 +127,7 @@ const Header: React.FC = () => {
                ) : (
                 <Link
                   key={link.name}
-                  to="/"
+                  to={link.href}
                   onClick={() => setIsOpen(false)}
                    className="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:text-[#1a73e8] hover:bg-blue-50"
                 >

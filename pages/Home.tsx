@@ -1,10 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Code2, ExternalLink, Globe, Download, ChevronRight } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { 
+  ArrowRight, 
+  Code2, 
+  ExternalLink, 
+  Globe, 
+  Download, 
+  ChevronRight, 
+  Sparkles,
+  Zap
+} from 'lucide-react';
 import { PERSONAL_INFO, SKILLS, PROJECTS, EDUCATION, CERTIFICATIONS } from '../constants';
 import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
+  // Use the 3D portfolio as the masterpiece
+  const specialProject = PROJECTS.find(p => p.id === '3d-portfolio');
+
   return (
     <div className="pt-16">
       <SEO 
@@ -15,17 +28,17 @@ const Home: React.FC = () => {
       />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden bg-white">
+      <section className="relative py-12 lg:py-24 overflow-hidden bg-white flex items-center">
         {/* Abstract Background Elements */}
-        <div className="absolute inset-0 z-0 opacity-40">
-           <svg className="h-full w-full text-gray-100" fill="none" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <div className="absolute inset-0 opacity-40 pointer-events-none">
+           <svg className="h-full w-full text-gray-50" fill="none" viewBox="0 0 100 100" preserveAspectRatio="none">
              <path d="M0 100 C 20 0 50 0 100 100 Z" fill="currentColor" />
            </svg>
         </div>
-        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob"></div>
-        <div className="absolute -bottom-32 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-purple-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-br from-blue-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob pointer-events-none"></div>
+        <div className="absolute -bottom-32 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-purple-50 to-transparent rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-blob animation-delay-2000 pointer-events-none"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24">
             <div className="flex-1 max-w-4xl text-center lg:text-left">
                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-50 text-[#1a73e8] text-sm font-medium mb-8 border border-blue-100">
@@ -75,8 +88,108 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Featured Project Spotlight Section (Dark Theme) */}
+      {specialProject && (
+        <section className="relative py-24 bg-[#0f172a] overflow-hidden">
+          {/* Background Gradients */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-indigo-500/20 rounded-full blur-[100px] mix-blend-screen animate-pulse"></div>
+            <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-500/20 rounded-full blur-[100px] mix-blend-screen animate-pulse animation-delay-2000"></div>
+          </div>
+
+          {/* Grid Overlay */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+             
+             <div className="flex justify-center mb-12">
+               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/10 backdrop-blur-md shadow-xl">
+                 <Sparkles className="w-4 h-4 text-yellow-300 fill-yellow-300" />
+                 <span className="text-sm font-bold text-white tracking-wide uppercase">Featured Masterpiece</span>
+               </div>
+             </div>
+
+             <div className="bg-gray-900/40 border border-white/10 rounded-3xl p-8 lg:p-12 backdrop-blur-xl shadow-2xl relative overflow-hidden group">
+                {/* Hover Glow */}
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+
+                <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
+                   
+                   {/* Image Content (Left) */}
+                   <div 
+                      className="w-full lg:w-3/5 relative group/image cursor-pointer" 
+                      onClick={() => navigate(`/project/${specialProject.id}`)}
+                   >
+                      {/* Decorative back layers */}
+                      <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl blur opacity-25 group-hover/image:opacity-50 transition duration-500"></div>
+                      
+                      <div className="relative rounded-xl overflow-hidden bg-gray-900 shadow-2xl border border-white/10">
+                         {/* Browser Toolbar */}
+                         <div className="h-10 bg-[#1e293b] flex items-center px-4 gap-2 border-b border-white/5">
+                            <div className="w-3 h-3 rounded-full bg-red-400"></div>
+                            <div className="w-3 h-3 rounded-full bg-amber-400"></div>
+                            <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
+                            <div className="ml-4 flex-1 h-5 bg-white/10 rounded text-xs text-gray-400 flex items-center px-2 font-mono truncate">
+                               {specialProject.liveUrl}
+                            </div>
+                         </div>
+                         <div className="aspect-[16/10] overflow-hidden">
+                           <img 
+                              src={specialProject.imageUrl} 
+                              alt={specialProject.title} 
+                              className="w-full h-full object-cover transform transition-transform duration-700 group-hover/image:scale-105"
+                           />
+                           {/* Overlay */}
+                           <div className="absolute inset-0 bg-indigo-950/20 group-hover/image:bg-transparent transition-colors duration-500"></div>
+                         </div>
+                      </div>
+                   </div>
+
+                   {/* Text Content (Right) */}
+                   <div className="w-full lg:w-2/5 text-center lg:text-left">
+                      <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+                        {specialProject.title}
+                      </h2>
+                      <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                        {specialProject.shortDescription}
+                      </p>
+
+                      <div className="flex flex-wrap justify-center lg:justify-start gap-2 mb-10">
+                        {specialProject.technologies.slice(0, 5).map(tech => (
+                          <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-indigo-200">
+                             {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                         <Link 
+                            to={`/project/${specialProject.id}`}
+                            className="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                         >
+                            View Case Study <ArrowRight className="w-5 h-5" />
+                         </Link>
+                         {specialProject.liveUrl && (
+                            <a 
+                               href={specialProject.liveUrl}
+                               target="_blank"
+                               rel="noreferrer"
+                               className="px-8 py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/10 font-semibold rounded-xl transition-all flex items-center justify-center gap-2 backdrop-blur-sm"
+                            >
+                               <Globe className="w-5 h-5" /> Live Demo
+                            </a>
+                         )}
+                      </div>
+                   </div>
+
+                </div>
+             </div>
+          </div>
+        </section>
+      )}
+
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-[#f8f9fa] border-y border-[#dadce0]">
+      <section id="skills" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
             <h2 className="text-3xl font-medium google-font text-[#202124]">Technical Proficiency</h2>
@@ -97,12 +210,12 @@ const Home: React.FC = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 bg-white">
+      <section id="projects" className="py-24 bg-[#f8f9fa] border-t border-[#dadce0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-medium google-font text-[#202124]">Featured Projects</h2>
-              <p className="mt-2 text-[#5f6368] text-lg">Solving real-world problems with code.</p>
+              <h2 className="text-3xl font-medium google-font text-[#202124]">More Projects</h2>
+              <p className="mt-2 text-[#5f6368] text-lg">Other exciting things I've built.</p>
             </div>
             <a href={PERSONAL_INFO.github} target="_blank" rel="noreferrer" className="hidden md:flex items-center text-[#1a73e8] font-medium hover:text-[#174ea6] transition-colors mt-4 md:mt-0 px-4 py-2 hover:bg-blue-50 rounded">
               See more on GitHub <ArrowRight className="ml-2 w-4 h-4" />
@@ -110,7 +223,7 @@ const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {PROJECTS.map((project) => (
+            {PROJECTS.filter(p => p.id !== '3d-portfolio').map((project) => (
               <div key={project.id} className="group bg-white rounded-xl border border-[#dadce0] hover:border-[#d2e3fc] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-in-out overflow-hidden flex flex-col h-full">
                 <div className="p-6 flex-1 flex flex-col">
                   <div className="flex items-center justify-between mb-4">
@@ -171,7 +284,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Journey/Education Section */}
-      <section id="journey" className="py-20 bg-[#f8f9fa] border-t border-[#dadce0]">
+      <section id="journey" className="py-20 bg-white border-t border-[#dadce0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               <div>
@@ -224,7 +337,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Contact CTA */}
-      <section id="contact" className="py-24 bg-white border-t border-[#dadce0]">
+      <section id="contact" className="py-24 bg-[#f8f9fa] border-t border-[#dadce0]">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <div className="inline-block p-4 rounded-full bg-blue-50 mb-6">
              <Code2 className="w-10 h-10 text-[#1a73e8]" />
